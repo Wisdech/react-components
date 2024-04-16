@@ -1,0 +1,24 @@
+/*
+ * Copyright (c) 2024. Beijing Wisdech Co., Ltd.
+ * Website: www.wisdech.com
+ * Email: info@wisdech.com
+ */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+a.danger {
+    @apply text-red-500 hover:text-red-600 !important;
+}
+
+.wis {
+    &-team-switcher {
+        @apply inline-flex items-center content-center px-4 h-11 !important;
+
+        .trigger {
+            @apply flex h-11 self-center items-center !important;
+            @apply text-black p-2 leading-[44px] rounded-[6px] cursor-pointer !important;
+        }
+    }
+}
