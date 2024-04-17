@@ -9,3 +9,4 @@ export * from './WisList';
 export * from './WisTags';
 export * from './WisTable';
 export * from './WisTree';
+export * from './WisTrigger';
