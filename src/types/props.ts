@@ -19,3 +19,4 @@ export type WithRefresh<T = unknown> = {
 export type WithFieldProps<T = unknown> = {
   fieldProps?: ProFormFieldProps['fieldProps'];
 } & T;
+export type WithRequest<T, K> = T & { request: K }

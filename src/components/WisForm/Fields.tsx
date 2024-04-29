@@ -8,13 +8,28 @@ import React from 'react';
 import { ProFormFieldProps, ProFormTreeSelect } from '@ant-design/pro-form';
 import { asyncBoolean, trimChildren } from '../../helpers';
 import { ProFormSelect, ProFormSelectProps } from '@ant-design/pro-components';
-import { BaseRole, BaseTeam, FnCR, WithOptionalEntity } from '../../types';
+import { BaseRole, BaseTeam, BaseUser, FnCR, WithOptionalEntity, WithRequest } from '../../types';
 
-type TeamSelectType = React.FC<Omit<ProFormFieldProps, 'request'> & { request: FnCR<BaseTeam[]> }>
-type TeamParentSelectType = React.FC<WithOptionalEntity<BaseTeam, Omit<ProFormFieldProps, 'request'>> & {
-  request: FnCR<BaseTeam[]>
-}>
-type RoleSelectType = React.FC<Omit<ProFormSelectProps, 'request'> & { request: FnCR<BaseRole[]> }>
+type UserSelectType = React.FC<WithRequest<Omit<ProFormSelectProps, 'request'>, FnCR<BaseUser[]>>>
+type TeamSelectType = React.FC<WithRequest<Omit<ProFormFieldProps, 'request'>, FnCR<BaseTeam[]>>>
+type TeamParentSelectType = React.FC<WithRequest<WithOptionalEntity<BaseTeam, Omit<ProFormFieldProps, 'request'>>, FnCR<BaseTeam[]>>>
+type RoleSelectType = React.FC<WithRequest<Omit<ProFormSelectProps, 'request'>, FnCR<BaseRole[]>>>
+
+export const UserSelect: UserSelectType = ({ fieldProps, request, ...props }) => (
+  <ProFormSelect
+    name="user_ids"
+    label="选择用户"
+    rules={[{ required: true }]}
+    request={async () => (await request).data ?? []}
+    fieldProps={{
+      fieldNames: { label: 'name', value: 'id' },
+      showSearch: true,
+      popupMatchSelectWidth: true,
+      ...fieldProps,
+    }}
+    {...props}
+  />
+);
 
 export const TeamSelect: TeamSelectType = ({ fieldProps, request, ...props }) => (
   <ProFormTreeSelect

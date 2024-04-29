@@ -10,7 +10,7 @@ import React from 'react';
 import { Button, ButtonProps } from 'antd';
 import { PlusCircleOutlined } from '@ant-design/icons';
 
-export * from './formFields'
+export * from './Fields'
 
 export interface WisFormModalProps<T extends Props> extends Omit<ModalFormProps<T>, 'trigger'> {
   trigger: {
