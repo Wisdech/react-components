@@ -9,9 +9,11 @@ import { ProTableProps } from '@ant-design/pro-table';
 import React from 'react';
 import { ParamsType, ProTable } from '@ant-design/pro-components';
 import { Space } from 'antd';
+import { tableRequest, TableRequest } from '../../helpers';
 
-export interface WisTableProps<T extends Entity> extends ProTableProps<T, ParamsType> {
+export interface WisTableProps<T extends Entity> extends Omit<ProTableProps<T, ParamsType>, 'request'> {
   light?: boolean;
+  request: TableRequest<T>;
   actions?: React.ReactNode[];
   toolbarActions?: React.ReactNode[];
   toolbarSearch?: {
@@ -25,7 +27,7 @@ export function WisTable<T extends Entity>(props: WisTableProps<T>) {
   const {
     light, actions,
     toolbarSearch, toolbarActions,
-    ...tableProps
+    request, ...tableProps
   } = props;
 
   return (
@@ -37,6 +39,7 @@ export function WisTable<T extends Entity>(props: WisTableProps<T>) {
         search: { filterType: 'light' },
         pagination: { pageSize: 15 },
       }}
+      request={tableRequest(request)}
       tableAlertRender={
         ({ selectedRowKeys, onCleanSelected }) => (
           <Space size={16}>

@@ -4,7 +4,9 @@
  * Email: info@wisdech.com
  */
 
-export type Props = Record<string, any>
+import { ParamsType } from '@ant-design/pro-components';
+
+export type Props = ParamsType
 export type Entity = BaseEntity | UuidEntity | Pivot<BaseEntity | UuidEntity>;
 
 export interface BaseEntity extends Props {

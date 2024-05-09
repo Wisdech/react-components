@@ -1,5 +1,5 @@
 {
-  "version": "0.1.5",
+  "version": "0.1.15",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -12,10 +12,10 @@
   },
   "scripts": {
     "start": "tsdx watch",
-    "build": "tsdx build && npx tailwindcss -i ./src/index.css -o ./dist/index.css",
+    "build": "tsdx build",
     "test": "tsdx test --passWithNoTests",
     "lint": "tsdx lint",
-    "prepare": "tsdx build && npx tailwindcss -i ./src/index.css -o ./dist/index.css",
+    "prepare": "tsdx build",
     "size": "size-limit",
     "analyze": "size-limit --why"
   },
@@ -36,8 +36,10 @@
     "@size-limit/preset-small-lib": "^11.1.2",
     "@types/react": "^18.2.78",
     "@types/react-dom": "^18.2.25",
+    "autoprefixer": "^10.4.19",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "rollup-plugin-postcss": "^4.0.2",
     "tailwindcss": "^3.4.3",
     "tsdx": "^0.14.1",
     "tslib": "^2.6.2",
@@ -47,6 +49,7 @@
     "@ant-design/icons": "^5.3.6",
     "@ant-design/pro-components": "^2.7.0",
     "antd": "^5.16.2",
+    "axios": "^1.6.8",
     "dayjs": "^1.11.10"
   }
 }

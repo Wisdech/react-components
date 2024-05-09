@@ -42,6 +42,3 @@ export interface PaginationResult<T = any> {
   host?: string;
   traceId?: string;
 }
-
-export type FnCR<T = null> = Promise<CommonResult<T>>
-export type FnPR<T = any> = Promise<PaginationResult<T>>

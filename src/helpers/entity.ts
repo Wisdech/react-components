@@ -16,3 +16,22 @@ export function trimChildren<T extends Entity>(models?: WithChildren<T>[]) {
   });
   return models ?? [];
 }
+
+export function groupBySlash<T = any>(entity: T[], key: keyof T): [string, T[]][] {
+  let grouped: Map<string, T[]> = new Map();
+
+  entity.forEach((e) => {
+    const name = JSON.stringify(e[key]);
+    const group = name.substring(0, name.indexOf('/'));
+
+    if (!grouped.has(group)) {
+      grouped.set(group, []);
+    }
+
+    if (name.startsWith(group)) {
+      grouped.get(group)?.push(e);
+    }
+  });
+
+  return Array.from(grouped);
+}

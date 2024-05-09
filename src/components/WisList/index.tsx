@@ -8,9 +8,11 @@ import { Entity } from '../../types';
 import React from 'react';
 import { ParamsType, ProList, ProListProps } from '@ant-design/pro-components';
 import { Space } from 'antd';
+import { TableRequest, tableRequest } from '../../helpers';
 
-export interface WisListProps<T extends Entity> extends ProListProps<T, ParamsType> {
+export interface WisListProps<T extends Entity> extends Omit<ProListProps<T, ParamsType>, 'request'> {
   light?: boolean;
+  request: TableRequest<T>;
   actions?: React.ReactNode[];
   toolbarActions?: React.ReactNode[];
   toolbarSearch?: {
@@ -24,7 +26,7 @@ export function WisList<T extends Entity>(props: WisListProps<T>) {
   const {
     light, actions,
     toolbarSearch, toolbarActions,
-    ...listProps
+    request, ...listProps
   } = props;
 
   return (
@@ -36,6 +38,7 @@ export function WisList<T extends Entity>(props: WisListProps<T>) {
         search: { filterType: 'light' },
         pagination: { pageSize: 15 },
       }}
+      request={tableRequest(request)}
       tableAlertRender={
         ({ selectedRowKeys, onCleanSelected }) => (
           <Space size={16}>

@@ -4,6 +4,9 @@
  * Email: info@wisdech.com
  */
 
+import './index.css';
+
 export * from './components';
 export * from './helpers';
 export * from './types';
+export * from './umi';

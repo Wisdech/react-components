@@ -23,14 +23,16 @@ export function WisTree<T extends Entity>(props: WisTreeProps<T>) {
   const { fieldNames, action, treeData, ...treeProps } = props;
 
   const switcherIcon = (
-    <div className="h-full leading-10">
-      <CaretDownFilled style={{ lineHeight: 40 }} />
+    <div style={{ height: '100%', lineHeight: '40px' }}>
+      <CaretDownFilled style={{ lineHeight: '40px' }} />
     </div>
   );
 
   const titleRender = (node: T) => (
-    <div className="flex" key={node[fieldNames.key ?? 'id']}>
-      <span className="px-2 text-sm leading-10">{`${node[fieldNames.title]}`}</span>
+    <div style={{ display: 'flex' }} key={node[fieldNames.key ?? 'id']}>
+      <span style={{ paddingLeft: 8, paddingRight: 8, fontSize: 14, lineHeight: '40px' }}>
+        {`${node[fieldNames.title]}`}
+      </span>
       {action && action({ entity: node })}
     </div>
   );
