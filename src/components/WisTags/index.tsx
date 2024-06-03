@@ -4,8 +4,8 @@
  * Email: info@wisdech.com
  */
 
-import { Entity } from '../../types';
-import { Tag, TagProps } from 'antd';
+import {Entity} from '@/types';
+import {Tag, TagProps} from 'antd';
 import React from 'react';
 
 export interface WisTagsProps<T extends Entity> extends TagProps {

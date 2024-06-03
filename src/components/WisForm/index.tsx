@@ -4,11 +4,11 @@
  * Email: info@wisdech.com
  */
 
-import { ModalForm, ModalFormProps } from '@ant-design/pro-form';
-import { Props } from '../../types';
+import {ModalForm, ModalFormProps} from '@ant-design/pro-form';
+import {Props} from '@/types';
 import React from 'react';
-import { Button, ButtonProps } from 'antd';
-import { PlusCircleOutlined } from '@ant-design/icons';
+import {Button, ButtonProps} from 'antd';
+import {PlusCircleOutlined} from '@ant-design/icons';
 
 export * from './Fields'
 

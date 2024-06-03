@@ -4,7 +4,7 @@
  * Email: info@wisdech.com
  */
 
-import { ParamsType } from '@ant-design/pro-components';
+import {ParamsType} from '@ant-design/pro-components';
 
 export type Props = ParamsType
 export type Entity = BaseEntity | UuidEntity | Pivot<BaseEntity | UuidEntity>;

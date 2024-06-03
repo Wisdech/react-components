@@ -4,7 +4,7 @@
  * Email: info@wisdech.com
  */
 
-import { useEffect, useState } from 'react';
+import {useEffect, useState} from 'react';
 
 export default function useWindowSize() {
   const [state, setState] = useState({ width: 0, height: 0 });

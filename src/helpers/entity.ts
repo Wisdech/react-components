@@ -4,7 +4,7 @@
  * Email: info@wisdech.com
  */
 
-import { Entity, WithChildren } from '../types';
+import {Entity, WithChildren} from '@/types';
 
 export function trimChildren<T extends Entity>(models?: WithChildren<T>[]) {
   models?.forEach((model) => {

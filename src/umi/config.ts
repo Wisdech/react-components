@@ -4,9 +4,9 @@
  * Email: info@wisdech.com
  */
 
-import { message, notification } from 'antd';
-import { CommonResult, ErrorShowType } from '../types';
-import { AxiosError } from 'axios';
+import {message, notification} from 'antd';
+import {CommonResult, ErrorShowType} from '@/types';
+import {AxiosError} from 'axios';
 
 export type UmiRequestProps = {
   on401?: () => void | Promise<void>,

@@ -4,7 +4,7 @@
  * Email: info@wisdech.com
  */
 
-import { ProFormFieldProps } from '@ant-design/pro-form';
+import {ProFormFieldProps} from '@ant-design/pro-form';
 
 export type WithEntity<T, K = unknown> = { entity: T } & K;
 export type WithOptionalEntity<T, K = unknown> = { entity?: T } & K;

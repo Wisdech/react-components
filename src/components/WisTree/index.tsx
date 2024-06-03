@@ -4,10 +4,10 @@
  * Email: info@wisdech.com
  */
 
-import { Tree, TreeDataNode, TreeProps } from 'antd';
-import { CaretDownFilled } from '@ant-design/icons';
+import {Tree, TreeDataNode, TreeProps} from 'antd';
+import {CaretDownFilled} from '@ant-design/icons';
 import React from 'react';
-import { Entity, WithChildren } from '../../types';
+import {Entity, WithChildren} from '@/types';
 
 export interface WisTreeProps<T extends Entity> extends Omit<TreeProps, 'fieldNames' | 'treeData'> {
   fieldNames: {
