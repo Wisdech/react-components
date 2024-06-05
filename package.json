@@ -28,9 +28,9 @@
     "singleQuote": true,
     "trailingComma": "es5"
   },
-  "name": "@wisdech/components",
+  "name": "@wisdech/react-components",
   "author": "Beijing Wisdech Co., Ltd.",
-  "module": "dist/components.esm.js",
+  "module": "dist/react-components.esm.js",
   "devDependencies": {
     "@rollup/plugin-replace": "^5.0.5",
     "@size-limit/preset-small-lib": "^11.1.2",
@@ -46,10 +46,10 @@
     "typescript": "^5.4.5"
   },
   "dependencies": {
-    "@ant-design/icons": "^5.3.6",
-    "@ant-design/pro-components": "^2.7.0",
-    "antd": "^5.16.2",
-    "axios": "^1.6.8",
-    "dayjs": "^1.11.10"
+    "@ant-design/icons": ">=5.3.6",
+    "@ant-design/pro-components": ">=2.7.0",
+    "antd": ">=5.16.2",
+    "axios": ">=1.6.8",
+    "dayjs": ">=1.11.10"
   }
 }
