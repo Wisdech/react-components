@@ -1,10 +1,9 @@
 /*
- * Copyright (c) 2024. Beijing Wisdech Co., Ltd.
- * Website: www.wisdech.com
- * Email: info@wisdech.com
+ * Copyright (c) 2024. Wisdech Software, All Rights Reserved.
+ * Website: https://www.wisdech.com
  */
 
-import {useEffect, useState} from 'react';
+import { useEffect, useState } from 'react';
 
 export default function useWindowSize() {
   const [state, setState] = useState({ width: 0, height: 0 });

@@ -1,8 +1,6 @@
-
 /*
- * Copyright (c) 2024. Beijing Wisdech Co., Ltd.
- * Website: www.wisdech.com
- * Email: info@wisdech.com
+ * Copyright (c) 2024. Wisdech Software, All Rights Reserved.
+ * Website: https://www.wisdech.com
  */
 
 export enum ErrorShowType {

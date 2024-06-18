@@ -1,19 +1,24 @@
 /*
- * Copyright (c) 2024. Beijing Wisdech Co., Ltd.
- * Website: www.wisdech.com
- * Email: info@wisdech.com
+ * Copyright (c) 2024. Wisdech Software, All Rights Reserved.
+ * Website: https://www.wisdech.com
  */
 
+import {
+  ProFormFieldProps,
+  ProFormSelect,
+  ProFormSelectProps,
+  ProFormTreeSelect,
+} from '@ant-design/pro-components';
 import React from 'react';
-import {ProFormFieldProps, ProFormTreeSelect} from '@ant-design/pro-form';
-import {asyncBoolean} from '@/helpers';
-import {ProFormSelect, ProFormSelectProps} from '@ant-design/pro-components';
-import {BaseTeam, WithOptionalEntity} from '@/types';
+import { asyncBoolean } from '../../helpers';
+import { BaseTeam, WithOptionalEntity } from '../../types';
 
-type UserSelectType = React.FC<ProFormSelectProps>
-type TeamSelectType = React.FC<ProFormFieldProps>
-type TeamParentSelectType = React.FC<WithOptionalEntity<BaseTeam, ProFormFieldProps>>
-type RoleSelectType = React.FC<ProFormSelectProps>
+type UserSelectType = React.FC<ProFormSelectProps>;
+type TeamSelectType = React.FC<ProFormFieldProps>;
+type TeamParentSelectType = React.FC<
+  WithOptionalEntity<BaseTeam, ProFormFieldProps>
+>;
+type RoleSelectType = React.FC<ProFormSelectProps>;
 
 export const UserSelect: UserSelectType = ({ fieldProps, ...props }) => (
   <ProFormSelect
@@ -30,7 +35,7 @@ export const UserSelect: UserSelectType = ({ fieldProps, ...props }) => (
   />
 );
 
-export const TeamSelect: TeamSelectType = ({ fieldProps,...props }) => (
+export const TeamSelect: TeamSelectType = ({ fieldProps, ...props }) => (
   <ProFormTreeSelect
     name="team_ids"
     label="所属团队"
@@ -46,22 +51,35 @@ export const TeamSelect: TeamSelectType = ({ fieldProps,...props }) => (
   />
 );
 
-export const TeamParentSelect: TeamParentSelectType = ({ entity, fieldProps, ...props }) => (
+export const TeamParentSelect: TeamParentSelectType = ({
+  entity,
+  fieldProps,
+  ...props
+}) => (
   <ProFormTreeSelect
     name="parent_id"
     label="上级团队"
-    rules={entity ? [
-        { required: true, message: '请选择上级团队' },
-        { validator: (_, value) => asyncBoolean(!value || entity.id !== value) },
-      ]
-      : [{ required: true, message: '请选择上级团队' }]
+    rules={
+      entity
+        ? [
+            { required: true, message: '请选择上级团队' },
+            {
+              validator: (_, value) =>
+                asyncBoolean(!value || entity.id !== value),
+            },
+          ]
+        : [{ required: true, message: '请选择上级团队' }]
     }
     fieldProps={{ fieldNames: { label: 'name', value: 'id' }, ...fieldProps }}
     {...props}
   />
 );
 
-export const RoleSelect: RoleSelectType = ({ fieldProps, request, ...props }) => (
+export const RoleSelect: RoleSelectType = ({
+  fieldProps,
+  request,
+  ...props
+}) => (
   <ProFormSelect
     name="role_names"
     label="用户角色"

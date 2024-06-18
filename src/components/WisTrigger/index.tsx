@@ -1,11 +1,10 @@
 /*
- * Copyright (c) 2024. Beijing Wisdech Co., Ltd.
- * Website: www.wisdech.com
- * Email: info@wisdech.com
+ * Copyright (c) 2024. Wisdech Software, All Rights Reserved.
+ * Website: https://www.wisdech.com
  */
 
+import { Button, Popconfirm } from 'antd';
 import React from 'react';
-import {Button, Popconfirm} from 'antd';
 
 export interface WisTriggerProps {
   title: string;
@@ -15,7 +14,6 @@ export interface WisTriggerProps {
 }
 
 export const DangerButton: React.FC<WisTriggerProps> = (props) => {
-
   const { onClick, text, title, description } = props;
 
   return (
@@ -32,9 +30,7 @@ export const DangerButton: React.FC<WisTriggerProps> = (props) => {
   );
 };
 
-
 export const DangerLink: React.FC<WisTriggerProps> = (props) => {
-
   const { onClick, text, title, description } = props;
 
   return (

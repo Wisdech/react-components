@@ -1,12 +1,11 @@
 /*
- * Copyright (c) 2024. Beijing Wisdech Co., Ltd.
- * Website: www.wisdech.com
- * Email: info@wisdech.com
+ * Copyright (c) 2024. Wisdech Software, All Rights Reserved.
+ * Website: https://www.wisdech.com
  */
 
-import {ParamsType} from '@ant-design/pro-components';
+import { ParamsType } from '@ant-design/pro-components';
 
-export type Props = ParamsType
+export type Props = ParamsType;
 export type Entity = BaseEntity | UuidEntity | Pivot<BaseEntity | UuidEntity>;
 
 export interface BaseEntity extends Props {
@@ -27,7 +26,7 @@ export interface WithChildren<T extends Entity> {
 
 export type Pivot<T extends Entity, K extends Props = Props> = {
   pivot: K;
-} & T
+} & T;
 
 export interface BaseUser extends UuidEntity {
   name: string;

@@ -1,7 +1,6 @@
 /*
- * Copyright (c) 2024. Beijing Wisdech Co., Ltd.
- * Website: www.wisdech.com
- * Email: info@wisdech.com
+ * Copyright (c) 2024. Wisdech Software, All Rights Reserved.
+ * Website: https://www.wisdech.com
  */
 
 export function randomUUID(): string {
@@ -11,17 +10,27 @@ export function randomUUID(): string {
       // @ts-ignore
       return crypto?.randomUUID();
     }
-    if (typeof crypto.getRandomValues === 'function' && typeof Uint8Array === 'function') {
+    if (
+      typeof crypto.getRandomValues === 'function' &&
+      typeof Uint8Array === 'function'
+    ) {
       const callback = (c: any) => {
         const num = Number(c);
-        return (num ^ (crypto.getRandomValues(new Uint8Array(1))[0] & (15 >> (num / 4)))).toString(16);
+        return (
+          num ^
+          (crypto.getRandomValues(new Uint8Array(1))[0] & (15 >> (num / 4)))
+        ).toString(16);
       };
       // @ts-ignore
       return ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, callback);
     }
   }
   let timestamp = new Date().getTime();
-  let performanceNow = (typeof performance !== 'undefined' && performance.now && performance.now() * 1000) || 0;
+  let performanceNow =
+    (typeof performance !== 'undefined' &&
+      performance.now &&
+      performance.now() * 1000) ||
+    0;
   return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, (c) => {
     let random = Math.random() * 16;
     if (timestamp > 0) {

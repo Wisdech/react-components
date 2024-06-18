@@ -1,10 +1,8 @@
 /*
- * Copyright (c) 2024. Beijing Wisdech Co., Ltd.
- * Website: www.wisdech.com
- * Email: info@wisdech.com
+ * Copyright (c) 2024. Wisdech Software, All Rights Reserved.
+ * Website: https://www.wisdech.com
  */
-
-import {Entity, WithChildren} from '@/types';
+import { Entity, WithChildren } from '../types';
 
 export function trimChildren<T extends Entity>(models?: WithChildren<T>[]) {
   models?.forEach((model) => {
@@ -17,7 +15,10 @@ export function trimChildren<T extends Entity>(models?: WithChildren<T>[]) {
   return models ?? [];
 }
 
-export function groupBySlash<T = any>(entity: T[], key: keyof T): [string, T[]][] {
+export function groupBySlash<T = any>(
+  entity: T[],
+  key: keyof T,
+): [string, T[]][] {
   let grouped: Map<string, T[]> = new Map();
 
   entity.forEach((e) => {

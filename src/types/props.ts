@@ -1,10 +1,9 @@
 /*
- * Copyright (c) 2024. Beijing Wisdech Co., Ltd.
- * Website: www.wisdech.com
- * Email: info@wisdech.com
+ * Copyright (c) 2024. Wisdech Software, All Rights Reserved.
+ * Website: https://www.wisdech.com
  */
 
-import {ProFormFieldProps} from '@ant-design/pro-form';
+import { ProFormFieldProps } from '@ant-design/pro-components';
 
 export type WithEntity<T, K = unknown> = { entity: T } & K;
 export type WithOptionalEntity<T, K = unknown> = { entity?: T } & K;
@@ -19,4 +18,4 @@ export type WithRefresh<T = unknown> = {
 export type WithFieldProps<T = unknown> = {
   fieldProps?: ProFormFieldProps['fieldProps'];
 } & T;
-export type WithRequest<T, K> = T & { request: K }
+export type WithRequest<T, K> = T & { request: K };
