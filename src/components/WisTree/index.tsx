@@ -22,8 +22,8 @@ export function WisTree<T extends Entity>(props: WisTreeProps<T>) {
   const { fieldNames, action, treeData, ...treeProps } = props;
 
   const switcherIcon = (
-    <div style={{ height: '100%', lineHeight: '40px' }}>
-      <CaretDownFilled style={{ lineHeight: '40px' }} />
+    <div style={{ height: '100%', lineHeight: '44px' }}>
+      <CaretDownFilled style={{ lineHeight: '44px' }} />
     </div>
   );
 
@@ -31,10 +31,10 @@ export function WisTree<T extends Entity>(props: WisTreeProps<T>) {
     <div style={{ display: 'flex' }} key={node[fieldNames.key ?? 'id']}>
       <span
         style={{
-          paddingLeft: 8,
-          paddingRight: 8,
+          paddingLeft: 4,
+          paddingRight: 4,
           fontSize: 14,
-          lineHeight: '40px',
+          lineHeight: '44px',
         }}
       >
         {`${node[fieldNames.title]}`}
